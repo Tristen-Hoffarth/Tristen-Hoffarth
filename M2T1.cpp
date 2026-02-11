@@ -11,6 +11,7 @@ int main() {
     //Set up variables
     string first_name, last_name, full_name; //Hold customer name
     string product = "apples";
+    int amount_purchased;
     double cost_each = 0.99;
     double totale_cost;
 
@@ -27,11 +28,21 @@ int main() {
 
 
     //Ask how many they would like to purchase
+    cout << "How many " << product << " would you like today? ";
+    cin >> amount_purchased;
 
     //Calculate the total price
+    totale_cost = amount_purchased * cost_each;
+
+
+    // Formatting: set all prices to 2 decimal places
+    cout << setprecision(2) << fixed;
+   
+
     //Give the result
-
-
+    cout << "For " << amount_purchased << " " << product << endl;
+    cout << "That will be $" << totale_cost << endl;
+    cout << "Thank you for shopping with us!" << endl;
 
 
 
