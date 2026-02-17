@@ -12,7 +12,7 @@ using namespace std;
 int main() 
 {
     //Create a simple receipt
-    //Should include slaes tax
+    //Should include sales tax
 
     //Declare variables
     string item = "🍝 Spaghetti";
