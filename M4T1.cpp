@@ -14,7 +14,7 @@ int main()
     int count = 1;
     while (count <= 5) 
     {
-        cout << "Hello number "<< endl;
+        cout << "Hello"<< endl;
         count++;
     }
     cout << "That's all" << endl;
