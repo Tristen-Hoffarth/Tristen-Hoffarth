@@ -1,0 +1,70 @@
+// CSC 134
+// M5Lab2
+// Tristen Hoffarth
+// 4/5/26
+
+#include <iostream>
+#include <iomanip> // for decimals
+using namespace std;
+
+// Function prototypes
+double getLength();
+double getWidth();
+double getArea(double length, double width);
+void displayData(double length, double width, double area);
+
+int main()
+{
+    // This program calculates the area of a rectangle.
+    double length, width, area;
+          
+    // Get the rectangle's length.
+    length = getLength();
+   
+    // Get the rectangle's width.
+    width = getWidth();
+   
+    // Get the rectangle's area.
+    area = getArea(length, width);
+   
+    // Display the rectangle's data.
+    displayData(length, width, area);
+          
+    return 0;
+}
+
+// FUNCTIONS
+
+// Ask user for rectangle length
+double getLength() 
+{
+    double length;
+    cout << "Enter the length of the rectangle: ";
+    cin >> length;
+    return length;
+}
+
+// Ask user for rectangle width
+double getWidth() 
+{
+    double width;
+    cout << "Enter the width of the rectangle: ";
+    cin >> width;
+    return width;
+}
+
+// Calculate area
+double getArea(double length, double width) 
+{
+    return length * width;
+}
+
+// Display results
+void displayData(double length, double width, double area) 
+{
+    cout << fixed << setprecision(2); // two decimal places
+    cout << "\nRectangle Data:" << endl;
+    cout << "Length: " << length << endl;
+    cout << "Width:  " << width << endl;
+    cout << "Area:   " << area << endl;
+}
