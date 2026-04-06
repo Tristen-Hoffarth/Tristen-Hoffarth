@@ -1,3 +1,8 @@
+// CSC 134
+// M5T2
+// Tristen Hoffarth
+// 4/5/26
+
 #include <iostream>
 using namespace std;
 
