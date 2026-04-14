@@ -19,34 +19,37 @@ void question5();
 // Main function
 int main() 
 {
-    // Variable
     int choice;
 
-    // Main Menu function
-    cout << "Main Menu" << endl;
-    cout << "--------------------" << endl;
-    cout << "1. Rainfall Calculator" << endl;
-    cout << "2. Question 2" << endl;
-    cout << "3. Question 3" << endl;
-    cout << "4. Question 4" << endl;
-    cout << "5. Question 5" << endl;
-    cout << "Enter the number of the question you want to run: ";
-    cin >> choice;
+    do {
+        cout << "\nMain Menu" << endl;
+        cout << "--------------------" << endl;
+        cout << "1. Rainfall Calculator" << endl;
+        cout << "2. Volume Calculator" << endl;
+        cout << "3. Roman Numeral Converter" << endl;
+        cout << "4. Area Calculator" << endl;
+        cout << "5. Distance Calculator" << endl;
+        cout << "6. Exit" << endl;
+        cout << "Enter your choice: ";
+        cin >> choice;
 
-    // If statements to call the appropriate function based on user input
-    if (choice == 1) {
-        question1();
-    } else if (choice == 2) {
-        question2();
-    } else if (choice == 3) {
-        question3();
-    } else if (choice == 4) {
-        question4();
-    } else if (choice == 5) {
-        question5();
-    } else {
-        cout << "Invalid choice. Please try again." << endl;
-    }
+        if (choice == 1) {
+            question1();
+        } else if (choice == 2) {
+            question2();
+        } else if (choice == 3) {
+            question3();
+        } else if (choice == 4) {
+            question4();
+        } else if (choice == 5) {
+            question5();
+        } else if (choice == 6) {
+            cout << "Exiting program..." << endl;
+        } else {
+            cout << "Invalid choice. Try again.\n";
+        }
+
+    } while (choice != 6);
 
     return 0;
 }
@@ -83,7 +86,7 @@ void question1()
     // Decimal formatting
     cout << fixed << setprecision(2);
     // Display the results
-    cout << "The average rainfall for " << month1 << ", " << month2 << ", and " << month3 << " is: " << average << endl;
+    cout << "The average rainfall for " << month1 << ", " << month2 << ", and " << month3 << " is: " << average << " inches" << endl;
 }
 
 // Question 2
@@ -121,7 +124,7 @@ void question3()
     cout << "Roman Numeral Converter" << endl;
     cout << "-----------------------" << endl;
 
-    cout << "Enter a number: ";
+    cout << "Enter a number (1-10): ";
     cin >> number;
 
     if (number < 1 || number > 10) 
@@ -186,6 +189,73 @@ void question4()
         return;
     }
 
-    
+    if (choice == 1) {
+        cout << "Enter the radius of the circle: ";
+        cin >> radius;
+        if (radius <= 0) {
+            cout << "Radius must be greater than zero.\n" << endl;
+            return;
+        }
+        cout << fixed << setprecision(2);
+        cout << "The area of the circle is: " << 3.14159 * radius * radius << endl;
+    } else if (choice == 2) 
+    {
+        cout << "Enter the length of the rectangle: ";
+        cin >> length;
+        cout << "Enter the width of the rectangle: ";
+        cin >> width;
+        if (length <= 0 || width <= 0) {
+            cout << "Length and width must be greater than zero.\n" << endl;
+            return;
+        }
+        cout << fixed << setprecision(2);
+        cout << "The area of the rectangle is: " << length * width << endl;
+    } else if (choice == 3) {
+        cout << "Enter the base of the triangle: ";
+        cin >> base;
+        cout << "Enter the height of the triangle: ";
+        cin >> height;
+        if (base <= 0 || height <= 0) {
+            cout << "Base and height must be greater than zero.\n" << endl;
+            return;
+        }
+        cout << fixed << setprecision(2);
+        cout << "The area of the triangle is: " << 0.5 * base * height << endl;
+    } else if (choice == 4) {
+        cout << "Exiting program." << endl;
+    }
+
+}
+
+// Question 5
+void question5() 
+{
+    int speed, hours;
+
+    cout << "Distance Calculator" << endl;
+    cout << "-------------------" << endl;
+
+    cout << "Enter the speed of the vehicle (in miles per hour): ";
+    cin >> speed;
+
+    if (speed <= 0) {
+        cout << "Speed must be greater than zero.\n" << endl;
+        return;
+    }
+
+    cout << "Enter the number of hours traveled: ";
+    cin >> hours;
+
+    if (hours <= 0) {
+        cout << "Hours must be greater than zero.\n" << endl;
+        return;
+    }
+
+    cout << "\nHours\tDistance\n";
+    cout << "-------------------\n";
+
+    for (int i = 1; i <= hours; i++) {
+        cout << i << "\t" << speed * i << endl;
+    }
 
 }
